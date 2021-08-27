@@ -1,0 +1,29 @@
+<html>
+  <head></head>
+  <div>aaaaaaa</div>
+</html>
+
+<script>
+  // var ele = document.getElementsByTagName('div')[0]
+  // console.log('document: ', document);
+  // console.log('ele: ', ele);
+  // // ele.style = 'color: red; ';
+  // // ele.style.color = 'red';
+  // var eleStyle = document.createElement("style");
+  // eleStyle.innerHTML = 'div { color: red; }';
+  // ele.appendChild(eleStyle);
+
+  
+    window.onbeforeunload = function (e) {
+      console.log('e: ', e);
+  e = e || window.event;
+
+  // 兼容IE8和Firefox 4之前的版本
+  if (e) {
+    e.returnValue = '关闭提示';
+  }
+
+  // Chrome, Safari, Firefox 4+, Opera 12+ , IE 9+
+  return '关闭提示';
+};
+</script>

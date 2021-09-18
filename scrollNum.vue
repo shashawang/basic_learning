@@ -1,4 +1,15 @@
 <template>
+<!-- 使用 -->
+<!-- <ul class="flex">
+        <ScrollNum
+          v-for="(number, idx) of [8,8,6]"
+          :key="idx"
+          :i="number"
+          :delay="idx + 2.5"
+          as="li"
+          class="num"
+        />
+      </ul> -->
   <component
     :is="as"
     class="scroll-num"

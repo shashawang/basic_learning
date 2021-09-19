@@ -1,0 +1,23 @@
+<input type="search" class="search" id="city" placeholder="输入省会或直辖市名称" />
+<label class="datalist" for="city"> 
+    <div class="list" data-index="重庆市chongqing">重庆市</div>
+    <div class="list" data-index="哈尔滨市haerbing">哈尔滨市</div>
+    <div class="list" data-index="长春市changchun">长春市</div>
+    ...
+</label>
+
+<script>
+  var eleStyle = document.createElement("style");
+document.querySelector("head").appendChild(eleStyle);
+
+// 文本框输入
+document.querySelector("input").addEventListener("input", function() {
+    var val = this.value.trim().toLowerCase();
+    if (val !== '') {
+        // 改变CSS筛选规则
+        eleStyle.innerHTML = '.list:not([data-index*="'+ this.value +'"]) { display: none; }';
+    } else {
+        eleStyle.innerHTML = '';
+    }
+});
+</script>

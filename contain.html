@@ -1,0 +1,51 @@
+<div class="item">
+  <div>Lorem ipsum...</div>
+</div>
+
+<script>
+  const NUM_ITEMS = 10000;
+const NUM_REPETITIONS = 10;
+
+function log(text) {
+    let log = document.getElementById("log");
+    log.textContent += text;
+}
+
+function changeTargetContent() {
+    log("Change \"targetInner\" content...");
+
+    // Force layout.
+    document.body.offsetLeft;
+
+    let start = window.performance.now();
+
+    let targetInner = document.getElementById("targetInner");
+    targetInner.textContent = targetInner.textContent == "Hello World!" ? "BYE" : "Hello World!";
+
+    // Force layout.
+    document.body.offsetLeft;
+
+    let end = window.performance.now();
+    let time = window.performance.now() - start;
+    log(" Time (ms): " + time + "\n");
+    return time;
+}
+
+function setup() {
+    for (let i = 0; i < NUM_ITEMS; i++) {
+        let item = document.createElement("div");
+        item.classList.add("item");
+
+        let inner = document.createElement("div");
+        inner.style.backgroundColor = "#" + Math.random().toString(16).slice(-6);
+        inner.textContent = "Lorem ipsum...";
+        item.appendChild(inner);
+
+        wrapper.appendChild(item);
+    }
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  setup();
+});
+</script>

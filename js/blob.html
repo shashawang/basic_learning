@@ -1,0 +1,28 @@
+<!-- html部分 -->
+<a id="h">点此进行下载</a>
+<!-- js部分 -->
+<script>
+  var blob = new Blob(["Hello World,如果想要读取Blob或者文件对象并转化为其他格式的数据，可以借助FileReader对象的API进行操作, FileReader.readAsText(Blob)：将Blob转化为文本字符串,FileReader.readAsArrayBuffer(Blob)： 将Blob转为ArrayBuffer格式数据,FileReader.readAsDataURL(): 将Blob转化为Base64格式的Data URL"]);
+  var url = window.URL.createObjectURL(blob);
+	console.log('url: ', url);
+  var a = document.getElementById("h");
+  a.download = "helloworld.txt";
+  a.href = url;
+</script> 
+
+<input type="file" id='f' />
+<script>
+  document.getElementById('f').addEventListener('change', function (e) {
+    var file = this.files[0];
+		// console.log('file.text(): ', file.text());
+		// console.log('file.stream(): ', file.stream());
+		// console.log('file.arrayBuffer(): ', file.arrayBuffer());
+		console.log('this.files: ', this.files);
+    const reader = new FileReader();
+    reader.onload = function () {
+        const content = reader.result;
+        console.log(content);
+    }
+    reader.readAsText(file);
+  }, false);
+</script>

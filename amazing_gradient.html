@@ -1,0 +1,23 @@
+<div></div>
+<style>
+  div {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* 棋盘格 */
+    /* background: repeating-conic-gradient(#fff 0, #fff 90deg, #000 90deg, #000 180deg);
+    background-size: 40% 40%; */
+    /* 组合渐变圆锥、径向 */
+    background:radial-gradient(circle at 50% 50%,
+          #fff 5%, 
+          rgba(255,255,255,0) 50%,
+          #fff 70%,
+          #fff 100%
+      ),repeating-conic-gradient(
+          #f00 0, 
+          #f00 15deg,
+          #fa0 15deg,
+          #fa0 30deg
+      )
+  }
+</style>

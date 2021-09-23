@@ -1,0 +1,55 @@
+<div class="poem">
+   <div class="content">
+       <p>
+            明月别枝惊鹊，<br>
+            清风半夜鸣蝉。<br>
+            稻花香里说丰年，<br>
+            听取蛙声一片。<br>
+            七八个星天外，<br>
+            两三点雨山前。<br>
+            旧时茅店社林边，<br>
+            路转溪桥忽见。<br>
+       </p>
+   </div>
+</div>
+
+<style>
+  .poem{
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.poem .content{
+   box-sizing: border-box;
+   color:#f9f9f9;
+   font-size: 20px;
+   line-height: 2.2em;
+   letter-spacing: 3px;
+   text-align: center;
+   padding: 40px 30px 35px 40px;
+   background: hsla(0, 0%, 100%, 0.3);
+   position: relative;
+   overflow: hidden;
+   z-index: 1;
+}
+.poem,.content::before{
+/* .poem,.content{ */
+   background: url('./aoliao1.jpg');
+   background-size: cover;
+   background-attachment: fixed;
+}
+.poem .content::before{
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   filter: blur(30px);
+   margin: -30px;
+   z-index: -1;
+}
+
+</style>

@@ -1,0 +1,19 @@
+<div class="window"></div>
+<style>
+.window{
+    height: 150vh;
+    width: 80vw;
+    background: url(./aoliao1.jpg) no-repeat;
+    background-size: cover; 
+    animation: move-pic 10s linear infinite alternate;
+    animation-play-state: paused;  /*非hover状态，动画暂停*/
+}
+.window:hover{
+    animation-play-state: running;  /*hover状态，动画继续*/
+}
+@keyframes move-pic {
+   to {
+       background-position: 0 100% ;
+   }
+}
+</style>

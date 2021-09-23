@@ -1,0 +1,43 @@
+<div class="wave">
+  <img src="./aoliao1.jpg" />
+  <span></span>
+  <span></span>
+</div>
+
+<style>
+  .wave{      
+   position: relative;
+}
+.wave img{
+   height: 50px;
+   width: 50px;
+   border-radius: 50%;
+}
+.wave span{
+   position: absolute;
+   z-index: -1;
+   top: -1px;
+   left: -1px;
+   height: 50px;
+   width: 50px;
+   border-radius: 50%;
+   border: 1px solid orange;
+   animation: 2s wave linear 4;
+   opacity: 0;
+}
+.wave span:nth-of-type(2){
+   animation-delay: 1s; 
+    /*用animation-delay将两个span的动画错开，形成水波纹*/
+}
+@keyframes wave {
+   50%{
+       transform: scale(1.2);
+       opacity: 1; 
+   }
+   100%{
+       transform: scale(1.4);
+       opacity: 0;
+   }
+}
+
+</style>

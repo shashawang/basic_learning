@@ -1,0 +1,23 @@
+<div class="hollow">css</div>
+<div class="glow">glow</div>
+
+<style>
+    div{
+    height: 200px;
+    width: 300px;
+    font-size: 100px;
+    text-align: center;
+}
+.hollow{
+    background-color: deeppink;
+    color: #fff;
+    text-shadow: 1px 1px black, 1px -1px black, -1px 1px black, -1px -1px black;
+    /*没有模糊距离值，相当于镶边效果*/
+}
+.glow{
+    background-color: #203;
+    color: #ffc;
+    text-shadow: 0 0 .1em, 0 0 .3em;  /*没指定颜色，阴影就和文字一个颜色*/
+}
+
+</style>

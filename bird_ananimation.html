@@ -1,0 +1,37 @@
+<!-- <div class="parent"> -->
+  <span class="bird bird1"></span>
+  <!-- <span class="bird bird2"></span>
+  <span class="bird bird3"></span> -->
+<!-- </div> -->
+
+<style>
+/* .bird1 {
+    background: url('./bird0.jpg') no-repeat;
+}
+.bird2 {
+    background: url('./bird1.jpg') no-repeat;
+}
+.bird3 {
+    background: url('./bird2.jpg') no-repeat;
+} */
+@keyframes fly {
+   100%{
+       background-position: -156px;
+   }
+}
+/* .parent {
+  height: 45px;
+  width: 52px;
+  overflow: hidden;
+} */
+  .bird{
+    display: inline-block;
+    background: url('./bird.jpg') no-repeat;
+    height: 45px;
+    width: 52px;
+    background-position: -1px;
+    animation: fly .5s steps(3) infinite;
+    /* background-size: contain; */
+}
+
+</style>

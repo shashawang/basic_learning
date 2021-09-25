@@ -1,0 +1,27 @@
+<div class="dialogue">你说了啥？</div>
+
+<style>
+  .dialogue{
+   margin-top: 50px;
+   padding: 10px;
+   border-radius: 2px;;
+   display: inline-block;
+   position: relative;
+   border: 1px solid #ccc;
+   max-width: 300px;
+   background-color: #fff;
+}
+.dialogue:before{
+   content: '';
+   height: 8px;
+   width: 8px;
+   border: 1px solid;
+   border-color: #ccc transparent transparent #ccc;
+   background-color: #fff;
+   position: absolute;
+   top: 15px;
+   right: -6px;
+   transform: rotate(135deg);
+}
+
+</style>

@@ -1,0 +1,35 @@
+<div class="float_box">
+  <div class="float_left">float_leftclear_floatclear_floatclear_floatclear_float</div>
+  <div class="float_right">float_right</div>
+  <!-- <div class="clear_float"></div> -->
+  <!-- <br clear="all"/> -->
+</div>
+<div class="no_float">no_float</div>
+
+<style>
+  .float_left {
+    float: left;
+    width: 200px;
+    height: 100px;
+    border: 2px solid red;
+  }
+  .float_right {
+    float: right;
+    width: 200px;
+    height: 100px;
+    border: 2px solid yellow;
+  }
+  .float_box {
+    overflow: auto  ;
+    background-color: blue;
+  }
+  .no_float {
+    /* 这里清除浮动只清除了浮动元素对自身的影响，上面元素外标签还是没被撑开，IE中在外标签添加zoom:1可以生效，另外两种clear属性也需要配合该属性 */
+    clear: both; 
+    color: #FFFFFF;
+    background-color: gray;
+  }
+  .clear_float {
+    clear: both;
+  }
+</style>

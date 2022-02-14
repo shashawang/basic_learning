@@ -1,0 +1,75 @@
+<div class="dynamic_border_length"></div>
+<div class="dynamic_dotted_border"></div>
+
+<style>
+  html, body {
+    width: 100%;
+    height: 100%;
+    /* display: flex; */
+}
+
+:root {
+    --borderColor: #03A9F3;
+}
+
+.dynamic_border_length {
+    position: relative;
+    width: 140px;
+    height: 64px;
+    margin: auto;
+    border: 1px solid #03A9F3;
+    cursor: pointer;
+    
+  }
+  
+  
+  .dynamic_border_length::before,
+  .dynamic_border_length::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      transition: .3s ease-in-out;
+  }
+  
+  .dynamic_border_length::before {
+      top: -5px;
+      left: -5px;
+      border-top: 1px solid var(--borderColor);
+      border-left: 1px solid var(--borderColor);
+  }
+  
+  .dynamic_border_length::after {
+      right: -5px;
+      bottom: -5px;
+      border-bottom: 1px solid var(--borderColor);
+      border-right: 1px solid var(--borderColor);
+  }
+  
+  .dynamic_border_length:hover::before,
+  .dynamic_border_length:hover::after {
+      width: calc(100% + 9px);
+      height: calc(100% + 9px);
+  }
+  
+  .dynamic_dotted_border {
+    width: 100px;
+    height: 100px;
+    background: 
+        linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+        linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+        linear-gradient(0deg, #333 50%, transparent 0) repeat-y,
+        linear-gradient(0deg, #333 50%, transparent 0) repeat-y;
+    background-size: 4px 1px, 4px 1px, 1px 4px, 1px 4px;
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+  }
+  .dynamic_dotted_border:hover {
+    animation: linearGradientMove .3s infinite linear;
+}
+
+@keyframes linearGradientMove {
+    100% {
+        background-position: 4px 0, -4px 100%, 0 -4px, 100% 4px;
+    }
+}
+</style>

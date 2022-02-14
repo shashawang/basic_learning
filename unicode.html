@@ -1,0 +1,31 @@
+<body>
+
+<!-- a&nbsp;&nbsp;&nbsp;&nbsp;b
+a" "b
+aaaaaaaaaaaaaaaaaaaa a ba aaaawqbabbbbbbbbbbbbb -->
+</body>
+
+<script>
+  var a = 0.1, b = 0.2;
+  const memory = new Float64Array(1)
+  memory[0] = a;
+  console.log(memory)
+  const intarr = new Uint8Array(memory.buffer)
+  console.log(intarr)
+
+  for(let i=0;i<8;i++) {
+    console.log(intarr[i].toString(2))
+  }
+  console.log(new Int8Array(8));
+  Number.MAX_SAFE_INTEGER
+</script>
+
+<script>
+  // fromCharCode指定chartcode(utf-8)返回对应的字符串;codePointAt返回字符串的unicode码点值
+  for (let i=0;i<128;i++) {
+    document.write(i + "<span style='background:green'>" + String.fromCharCode(i) + "</span><br/>")
+  }
+  // ''.codePointAt
+  // var \u5389\u5bb3 = 1
+  // console.log(厉害)
+</script>
